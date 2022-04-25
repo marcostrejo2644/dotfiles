@@ -13,7 +13,7 @@ fi
 export ZSH=/usr/share/oh-my-zsh/
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="random"
+ZSH_THEME="bureau"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -61,13 +61,13 @@ alias ls='colorls --group-directories-first'
 alias udpateArch='sudo pacman -Syyu'
 
 # Show text
-# figlet -k SailentK | /home/sailentk/scripts/center.sh
+# figlet -k Marcos | /home/sailentk/scripts/center.sh
 
 # System Info
 # neofetch
 
 # CowSay text
-cowsay -f tux Windows is a dog shit | /home/marcostrejo2644/scripts/center.sh
+# cowsay -f tux Windows is a dog shit | /home/marcostrejo2644/scripts/center.sh
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
