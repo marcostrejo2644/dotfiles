@@ -342,3 +342,4 @@ neofetch
 #sysinfo-retro
 #cpufetch
 #colorscript random
+. "$HOME/.cargo/env"

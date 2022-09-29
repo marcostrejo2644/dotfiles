@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "glepnir/lspsaga.nvim"
 
   -- themes
   use "joshdick/onedark.vim"
@@ -77,6 +78,7 @@ return packer.startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+  use 'xiyaowong/nvim-transparent'
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'

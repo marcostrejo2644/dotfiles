@@ -56,7 +56,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"], "m", lazy.spawn("rofi -show")),
 
     # Firefox
-    ([mod], "b", lazy.spawn("firefox")),
+    ([mod], "b", lazy.spawn("google-chrome-stable")),
 
     # Chromium
     ([mod], "c", lazy.spawn("chromium")),

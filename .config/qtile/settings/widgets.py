@@ -1,6 +1,6 @@
 from libqtile import widget
 from settings.theme import colors
-
+# import arcobattery
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
 base = lambda fg='text', bg='dark': {
@@ -21,7 +21,7 @@ powerline = lambda fg="light", bg="dark": widget.TextBox(
    **base(fg, bg),
     text="", # Icon: nf-oct-triangle_left
     fontsize=37,
-    padding=-2
+    padding=-3
 )
 
 workspaces = lambda: [
@@ -88,6 +88,14 @@ primary_widgets = [
     # if this dont work change interdace='search in console with ip a. then find pos 2:'
     # widget.Net(**base(bg='color3'), interface='wlp9s0'),
 
+    # arcobattery.BatteryIcon(
+    #                     padding=0,
+    #                     scale=0.7,
+    #                     y_poss=2,
+    #                     theme_path="~/.config/qtile/icons/battery_icons_horiz",
+    #                     update_interval = 5,
+    #                     background = colors[1]
+    #                     ),
     # powerline('color2', 'color3'),
     powerline('color2', 'color4'),
 
