@@ -120,11 +120,17 @@ secondary_widgets = [
 
     separator(),
 
-    powerline('color1', 'dark'),
+    powerline('color2', 'dark'),
 
-    widget.CurrentLayoutIcon(**base(bg='color1'), scale=0.65),
+    widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
 
-    widget.CurrentLayout(**base(bg='color1'), padding=5),
+    widget.CurrentLayout(**base(bg='color2'), padding=5),
+
+    powerline('color1', 'color2'),
+
+    icon(bg="color1", fontsize=17, text=' '),
+
+    widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
 ]
 
 widget_defaults = {

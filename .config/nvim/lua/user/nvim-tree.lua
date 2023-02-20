@@ -66,7 +66,7 @@ nvim_tree.setup {
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false, -- This option show hidden files that are in the gitignore file
     timeout = 500,
   },
   view = {

@@ -28,7 +28,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
 -- Clear highlight
-keymap("n", "<leader>l", ":noh <cr>", opts)
+keymap("n", "<leader>l", ":nohlsearch <cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -78,3 +78,4 @@ keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>p", ":Format<cr>", opts)
+

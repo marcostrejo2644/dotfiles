@@ -239,6 +239,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/marcost/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
+  },
+  ["vim-signature"] = {
+    loaded = true,
+    path = "/home/marcost/.local/share/nvim/site/pack/packer/start/vim-signature",
+    url = "https://github.com/kshenoy/vim-signature"
   }
 }
 
