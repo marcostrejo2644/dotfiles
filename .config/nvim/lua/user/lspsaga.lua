@@ -32,4 +32,4 @@ rename_action_keys = {
 -- "single" "double" "round" "plus"
 border_style = "single"
 rename_prompt_prefix = '➤'
-saga.init_lsp_saga()
+saga.setup()

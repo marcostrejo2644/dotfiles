@@ -1,5 +1,6 @@
-local fn = vim.fn
+local on_attach = require 'user.nvim-tree-on-attach'
 
+local fn = vim.fn
 -- Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -46,46 +47,6 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "kshenoy/vim-signature" -- For marks
 
-  -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "numToStr/Comment.nvim" -- Easily comment stuff
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
-  use 'kyazdani42/nvim-tree.lua'
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
-
-  -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-
-  -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "glepnir/lspsaga.nvim"
-
-  -- themes
-  use "joshdick/onedark.vim"
-  use 'folke/tokyonight.nvim'
-  -- use 'vim-airline/vim-airline'
-  -- use 'vim-airline/vim-airline-themes'
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-  use 'xiyaowong/nvim-transparent'
-
-  -- Telescope
-  use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-media-files.nvim'
-  use 'kyazdani42/nvim-web-devicons'
-
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -109,11 +70,71 @@ return packer.startup(function(use)
           empty_open = "",
           symlink = "",
         },
-      }
+      },
     }
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use {
+    'windwp/nvim-ts-autotag',
+    branch = 'main',
+    requires = {
+      'nvim-treesitter/nvim-treesitter',
+    },
+    config = function ()
+      require('nvim-ts-autotag').setup()
+    end
+  }
+  -- use "windwp/nvim-ts-autotag"
+  use "numToStr/Comment.nvim" -- Easily comment stuff
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
+  -- use {'kyazdani42/nvim-tree.lua', 
+  -- setup = {
+  --     on_attach = on_attach,
+  --   }
+  -- }
+  use 'kyazdani42/nvim-tree.lua'
+  use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
+
+  -- snippets
+  use "L3MON4D3/LuaSnip" --snippet engine
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "glepnir/lspsaga.nvim"
+  use "lukas-reineke/lsp-format.nvim"
+
+  -- themes
+  use "joshdick/onedark.vim"
+  use 'folke/tokyonight.nvim'
+  -- use 'vim-airline/vim-airline'
+  -- use 'vim-airline/vim-airline-themes'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  use 'xiyaowong/nvim-transparent'
+
+  -- Tabnine
+  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
+
+  -- Telescope
+  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-media-files.nvim'
+  use 'kyazdani42/nvim-web-devicons'
 
   -- Git
   use "lewis6991/gitsigns.nvim"
